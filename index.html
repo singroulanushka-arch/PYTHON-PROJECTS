@@ -3,41 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Anushka Portfolio Website">
-<meta name="keywords" content="Portfolio, Python, HTML, Student">
 <title>Anushka Portfolio</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
+:root{
+    --primary:#4a00ff;
+    --secondary:#6a5acd;
+    --bg:#f4f4f4;
+    --text:#333;
+}
+
+*{
     margin:0;
-    background:#f4f4f4;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 
 header{
-    background:#4f46e5;
+    background:linear-gradient(135deg,#4a00ff,#00a2ff);
     color:white;
     text-align:center;
-    padding:20px;
+    padding:50px 20px;
 }
 
 nav{
     background:#333;
-    padding:10px;
-    text-align:center;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+
+nav ul li{
     margin:15px;
 }
 
-section{
-    padding:20px;
-    margin:20px;
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding:30px;
+}
+
+.card{
     background:white;
+    padding:20px;
     border-radius:10px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+ul{
+    margin-left:20px;
 }
 
 footer{
@@ -46,6 +76,17 @@ footer{
     color:white;
     padding:15px;
 }
+
+@media(max-width:768px){
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+    }
+}
 </style>
 
 </head>
@@ -53,80 +94,58 @@ footer{
 
 <header>
     <h1>Anushka's Portfolio</h1>
-    <p>Python Learner & Future Tech Professional 🚀</p>
+    <p>Python Learner | Future Tech Professional 🚀</p>
 </header>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-<main>
+<div class="container">
 
-<section id="about">
+<section id="about" class="card">
     <h2>About Me</h2>
     <p>
-        Hello! I am Anushka, a student passionate about programming,
-        Python development, and technology. I enjoy building projects
-        and continuously improving my coding skills.
+        Hello! I am Anushka, a BCA student passionate about programming,
+        Python development and web technologies.
     </p>
 </section>
 
-<section id="skills">
+<section id="skills" class="card">
     <h2>Skills</h2>
     <ul>
         <li>Python</li>
         <li>HTML5</li>
+        <li>CSS3</li>
         <li>Problem Solving</li>
-        <li>Basic Programming</li>
     </ul>
 </section>
 
-<section id="projects">
+<section id="projects" class="card">
     <h2>Projects</h2>
-
-    <article>
-        <h3>Number Guess Game</h3>
-        <p>Python game where users guess a randomly generated number.</p>
-    </article>
-
-    <article>
-        <h3>Dice Game</h3>
-        <p>A simple dice rolling game built using Python.</p>
-    </article>
-
-    <article>
-        <h3>LCM Finder</h3>
-        <p>Program to calculate the Least Common Multiple of numbers.</p>
-    </article>
-
-    <article>
-        <h3>Quiz Game (Internship Project)</h3>
-        <p>Interactive quiz application with score tracking.</p>
-    </article>
+    <ul>
+        <li>Dice Game</li>
+        <li>Word Guessing Game</li>
+        <li>LCM & HCF Finder</li>
+        <li>Portfolio Website</li>
+    </ul>
 </section>
 
-<section id="contact">
-    <h2>Contact Me</h2>
-
-    <form>
-        <label for="name">Name:</label><br>
-        <input id="name" type="text" aria-label="Name"><br><br>
-
-        <label for="email">Email:</label><br>
-        <input id="email" type="email" aria-label="Email"><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" rows="5" cols="30"
-        aria-label="Message"></textarea><br><br>
-
-        <button type="submit">Send</button>
-    </form>
+<section id="contact" class="card">
+    <h2>Contact</h2>
+    <p>Email: singroulanushka@gmail.com</p>
+    <p>LinkedIn: www.linkedin.com/in/
+anushka-singroul-544622384
+</p>
+    <p>GitHub: https://singroulanushka-arch.github.io/PYTHON-PROJECTS/</p>
 </section>
 
-</main>
+</div>
 
 <footer>
     <p>© 2026 Anushka Portfolio</p>
